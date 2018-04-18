@@ -24,3 +24,8 @@ run_simulation = function(n_trials, n, p, cutoff){
     }
   hist(unlist(pvalues), main = "P-values")
 }
+par(mfrow = c(3,3))
+lapply(n= c(100,1000,10000), run_simulation, n_trials = 10, p=10, cutoff=0.05)
+lapply(n=c(100,1000,10000), run_simulation,n_trials = 10, p=20, cutoff=0.05)
+lapply(n=c(100,1000,10000), run_simulation, n_trials = 10, p=50, cutoff=0.05)
+
